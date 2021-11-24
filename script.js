@@ -20,17 +20,49 @@ let eraserMode = false;
 let randomMode = false;
 let colours = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
+//ERASER BUTTON
+const eraser = document.getElementsByClassName('eraser');
+eraser[0].addEventListener('click', function (e) {
+		if (eraserMode == false){
+		eraserMode = true;
+		randomMode = false;
+		e.target.style.background = "paleturquoise";
+		random[0].style.background = "aliceblue";
+		//clear and resize button colour change
+		} else {
+		eraserMode = false;
+		e.target.style.background = "aliceblue"
+		}
+		eraserButton();
+});
+function eraserButton() {
+	if (eraserMode == true) {
+		for (let i = 0; i < divs.length; i++) {
+    		divs[i].addEventListener('mouseover', function (e) {
+    		e.target.style.background = "lightgrey";
+		});
+		}
+   	} else {
+		for (let i = 0; i < divs.length; i++) {
+    		divs[i].addEventListener('mouseover', function (e) {
+    		e.target.style.background = "grey";
+		});
+		}
+	}
+}
 
-// need an event listener not a conditional
-
+//RANDOM BUTTON
 const random = document.getElementsByClassName('random');
 random[0].addEventListener('click', function (e) {
-		if (randomMode == false){
+		if (randomMode == false){	
 		randomMode = true;
+		eraserMode = false;
 		e.target.style.background = "paleturquoise"
+		eraser[0].style.background = "aliceblue";
+		//clear and resize button colour change
 		} else {
 		randomMode = false;
-		e.target.style.background = "lightgrey"
+		e.target.style.background = "aliceblue"
 		}
 		randomButton();
 });
@@ -50,51 +82,10 @@ function randomButton() {
 	}
 }
 
-
-
-/*
-if (randomMode == true){
-	for (let i = 0; i < divs.length; i++) {
-    	divs[i].addEventListener('mouseover', function (e) {
-    	e.target.style.background = randomCol();
-	});
-}
-} */ 
-
-//ERASER BUTTON
-const eraser = document.getElementsByClassName('eraser');
-eraser[0].addEventListener('click', function (e) {
-		if (eraserMode == false){
-		eraserMode = true;
-		e.target.style.background = "paleturquoise"
-		} else {
-		eraserMode = false;
-		e.target.style.background = "lightgrey"
-		}
-		eraserButton();
-});
-function eraserButton() {
-	if (eraserMode == true) {
-		for (let i = 0; i < divs.length; i++) {
-    		divs[i].addEventListener('mouseover', function (e) {
-    		e.target.style.background = "white";
-		});
-		}
-   	} else {
-		for (let i = 0; i < divs.length; i++) {
-    		divs[i].addEventListener('mouseover', function (e) {
-    		e.target.style.background = "grey";
-		});
-		}
-	}
-}
-
-
 function randomCol() {
     let rand = Math.floor(Math.random() * 8);
 	return colours[rand];
 }
-
 
 
 
