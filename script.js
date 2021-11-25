@@ -87,6 +87,19 @@ function randomCol() {
 	return colours[rand];
 }
 
+//CLEAR BUTTON
+const clear = document.getElementById("clear");
+if (clear) {
+  clear.addEventListener("click", function () {
+    Array.prototype.forEach.call(
+      document.getElementsByClassName("boardPiece"),
+      function (element) {
+        let pieces = document.getElementsByClassName("boardPiece");
+        element.style.background = "lightgrey";
+      }
+    );
+  });
+}
 
 
 
