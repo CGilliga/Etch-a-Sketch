@@ -1,3 +1,23 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+  background-color: cornsilk;
+  height: 500px;
+  width: 625px;
+  border-radius: 25px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 #etchy  {
   display: flex;
   border: 2px solid red;
@@ -49,6 +69,7 @@ button {
   background: grey;
   border-radius: 50%;
 }
+
 
 
 
