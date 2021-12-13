@@ -187,6 +187,10 @@ resize[0].addEventListener("click", function () {
       while (board.firstChild) {
         board.removeChild(board.firstChild);
       }
+
+eraser[0].style.background = "aliceblue";
+      random[0].style.background = "aliceblue";
+eraserMode = false;
        
 			switch (size) {
   case 16:
